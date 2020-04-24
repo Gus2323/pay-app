@@ -1,11 +1,15 @@
+body {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
 .App {
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .App-header {
-  background-image: linear-gradient(to bottom right, #366ed8, #169BD7);
-  min-height: 10vh;
+  background-image: linear-gradient(#366ed8, #169bd7);
+  min-height: 8vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,8 +18,15 @@
   color: #f2f3f3;
   font-weight: 700;
 }
-h1{
-  color:#064acb;
+h1 {
+  color: #064acb;
   font-weight: 700;
   font-size: calc(10px + 2vmin);
+}
+.card-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

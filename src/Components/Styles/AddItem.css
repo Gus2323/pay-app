@@ -1,0 +1,25 @@
+.card {
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  background-color: white;
+  padding: 10px;
+  padding-left: 0;
+  padding-right: 0;
+}
+button {
+  outline: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: calc(10px + 2vmin);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  border: 1px dashed black;
+}
+.new {
+  font-size: calc(6px + 2vmin);
+}
