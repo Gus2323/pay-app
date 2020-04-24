@@ -4,17 +4,18 @@
 }
 
 .App-header {
-  background-color: #064acb;
+  background-image: linear-gradient(to bottom right, #366ed8, #169BD7);
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(18px + 2vmin);
-  color: white;
+  color: #f2f3f3;
   font-weight: 700;
 }
 h1{
-  font-weight: 600;
+  color:#064acb;
+  font-weight: 700;
   font-size: calc(10px + 2vmin);
 }
