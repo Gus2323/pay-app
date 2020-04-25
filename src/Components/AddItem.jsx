@@ -8,9 +8,12 @@ class AddItem extends React.Component {
       return console.log("add item clicked");
     }
     return (
-      <div className="card">
-        <h1 className="new">Add New Item</h1>
-        <button onClick={handleClick}>+</button>
+      <div className="card-container">
+        <h1>My Listings</h1>
+        <div className="card">
+          <h1 className="new">Add New Item</h1>
+          <button onClick={handleClick}>+</button>
+        </div>
       </div>
     );
   }

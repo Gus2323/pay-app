@@ -5,17 +5,15 @@ import React from "react";
 import "./App.css";
 
 //Components
-import AddItem from "./Components/AddItem";
-import Header from './Components/Header';
+// import AddItem from "./Components/AddItem";
+import Header from "./Components/Header";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <h1>My Listings</h1>
-      <div className="card-container">
-        <AddItem />
-      </div>
+      <Header />
+
+      {/* <AddItem /> */}
     </div>
   );
 }
