@@ -1,9 +1,20 @@
-div{
-    border: 1px solid black;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 300px;
+.card {
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 1%;
+  background-color: white;
+}
+.item-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.item-price {
+  margin-top: 0;
+  padding-top: 0;
 }
 /* button{
     font-size: calc(10px + 2vmin);

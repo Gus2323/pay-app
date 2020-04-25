@@ -5,15 +5,14 @@ import React from "react";
 import "./App.css";
 
 //Components
-// import AddItem from "./Components/AddItem";
+import AddItem from "./Components/AddItem";
 import Header from "./Components/Header";
 
 function App() {
   return (
     <div className="App">
       <Header />
-
-      {/* <AddItem /> */}
+      <AddItem />
     </div>
   );
 }

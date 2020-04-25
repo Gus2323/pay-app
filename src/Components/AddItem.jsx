@@ -1,18 +1,57 @@
 import React from "react";
 import "../Components/Styles/AddItem.css";
 import "../App.css";
+import Card from "./Card.jsx";
 
 class AddItem extends React.Component {
   render() {
     function handleClick() {
-      return console.log("add item clicked");
+      const name = document.getElementById("item-name").value;
+      const description = document.getElementById("item-description").value;
     }
     return (
-      <div className="card-container">
+      <div>
         <h1>My Listings</h1>
-        <div className="card">
-          <h1 className="new">Add New Item</h1>
-          <button onClick={handleClick}>+</button>
+        <div className="new-card">
+          <h1 className="new">New Listing</h1>
+          <form>
+            <input
+              type="text"
+              placeholder="Enter Item Name"
+              id="item-name"
+            ></input>
+            <input
+              type="text"
+              placeholder="Enter Item Description"
+              id="item-description"
+            ></input>
+            <button onClick={handleClick}>Done</button>
+          </form>
+        </div>
+        <div className="card-container">
+          <Card
+            name="Cheeseburger"
+            description="Enjoy this burger today"
+            img="https://img.icons8.com/cotton/2x/cheeseburger.png"
+          />
+          <Card
+            name="Croissant"
+            description="We also serve croissants"
+            img="https://img.icons8.com/cotton/2x/fries.png"
+          />
+          <Card
+            name="Watermelon"
+            description="Quench your thirst with watermelon"
+            img="https://img.icons8.com/cotton/2x/watermelon.png"
+          />
+          <Card
+            name="Sushi"
+            description="We have sushi for takeout"
+            img="https://img.icons8.com/cotton/2x/sushi.png"
+          />
+          <Card name={this.name} />
+          <Card />
+          <Card />
         </div>
       </div>
     );
