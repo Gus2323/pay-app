@@ -9,7 +9,7 @@
   padding-left: 0;
   padding-right: 0;
 }
-button {
+/* button {
   outline: none;
   display: block;
   margin-left: auto;
@@ -19,7 +19,7 @@ button {
   height: 3rem;
   border-radius: 100%;
   border: 1px dashed black;
-}
+} */
 .new {
   font-size: calc(6px + 2vmin);
 }

@@ -5,7 +5,7 @@ import "../App.css";
 class AddItem extends React.Component {
   render() {
     function handleClick() {
-      return console.log("clicked");
+      return console.log("add item clicked");
     }
     return (
       <div className="card">

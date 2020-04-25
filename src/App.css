@@ -6,23 +6,17 @@ body {
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
-
-.App-header {
-  background-image: linear-gradient(#366ed8, #169bd7);
-  min-height: 8vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(18px + 2vmin);
-  color: #f2f3f3;
-  font-weight: 700;
+img{
+  display: block;
+  width: 75px;
+  height: 75px;
 }
-h1 {
+
+/* h1 {
   color: #064acb;
   font-weight: 700;
   font-size: calc(10px + 2vmin);
-}
+} */
 .card-container {
   margin-left: 10%;
   margin-right: 10%;
