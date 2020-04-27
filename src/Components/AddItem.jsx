@@ -2,8 +2,21 @@ import React from "react";
 import "../Components/Styles/AddItem.css";
 import "../App.css";
 import Card from "./Card.jsx";
+import axios from 'axios';
 
 class AddItem extends React.Component {
+  state = {
+    selectedFile : null
+  }
+
+  fileHandler = event =>{
+    this.setState({
+      selectedFile: event.target.files[0]
+    })
+  }
+  uploadHandler = () =>{
+    axios.post('');
+  }
   render() {
     function handleClick() {
       const name = document.getElementById("item-name").value;
@@ -20,6 +33,8 @@ class AddItem extends React.Component {
               placeholder="Enter Item Name"
               id="item-name"
             ></input>
+            <input type="file" onChange={this.fileHandler}/>
+            <button onClick={this.uploadHandler}>Upload</button>
             <input
               type="text"
               placeholder="Enter Item Description"
