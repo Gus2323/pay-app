@@ -11,7 +11,13 @@ img {
   width: 75px;
   height: 75px;
 }
-
+.new-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  height: 130px;
+}
 /* h1 {
   color: #064acb;
   font-weight: 700;
