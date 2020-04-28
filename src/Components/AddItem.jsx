@@ -2,21 +2,21 @@ import React from "react";
 import "../Components/Styles/AddItem.css";
 import "../App.css";
 import Card from "./Card.jsx";
-import axios from 'axios';
+import axios from "axios";
 
 class AddItem extends React.Component {
   state = {
-    selectedFile : null
-  }
+    selectedFile: null,
+  };
 
-  fileHandler = event =>{
+  fileHandler = (event) => {
     this.setState({
-      selectedFile: event.target.files[0]
-    })
-  }
-  uploadHandler = () =>{
-    axios.post('');
-  }
+      selectedFile: event.target.files[0],
+    });
+  };
+  uploadHandler = () => {
+    axios.post("");
+  };
   render() {
     function handleClick() {
       const name = document.getElementById("item-name").value;
@@ -33,8 +33,7 @@ class AddItem extends React.Component {
               placeholder="Enter Item Name"
               id="item-name"
             ></input>
-            <input type="file" onChange={this.fileHandler}/>
-            <button onClick={this.uploadHandler}>Upload</button>
+            <input type="file" onChange={this.fileHandler} />
             <input
               type="text"
               placeholder="Enter Item Description"
@@ -45,27 +44,30 @@ class AddItem extends React.Component {
         </div>
         <div className="card-container">
           <Card
-            name="Cheeseburger"
-            description="Enjoy this burger today"
-            img="https://img.icons8.com/cotton/2x/cheeseburger.png"
+            name="Men's T-Shirt"
+            description=""
+            img="https://img.icons8.com/carbon-copy/2x/clothes.png"
+            price="$4.99"
           />
           <Card
-            name="Croissant"
-            description="We also serve croissants"
-            img="https://img.icons8.com/cotton/2x/fries.png"
+            name="Women's T-Shirt"
+            description=""
+            img="https://img.icons8.com/ios/2x/womens-t-shirt.png"
+            price="$4.99"
           />
           <Card
-            name="Watermelon"
-            description="Quench your thirst with watermelon"
-            img="https://img.icons8.com/cotton/2x/watermelon.png"
+            name="Hanger Pack (20)"
+            description=""
+            img="https://img.icons8.com/color/2x/hanger.png"
+            price="$9.99"
           />
           <Card
-            name="Sushi"
-            description="We have sushi for takeout"
-            img="https://img.icons8.com/cotton/2x/sushi.png"
+            name="Sunglasses"
+            description=""
+            img="https://img.icons8.com/cotton/2x/glasses--v3.png"
+            price="$9.99"
           />
           <Card name={this.name} />
-          <Card />
           <Card />
         </div>
       </div>
