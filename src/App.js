@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/pay-app" component={Homepage} />
+        <Route exact path="/" component={Homepage} />
         <Route exact path="/new-item" component={AddItem} />
         <Route component={PageNotFound} />
       </Switch>
