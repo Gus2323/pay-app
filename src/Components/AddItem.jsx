@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Components/Styles/AddItem.css";
 import "../App.css";
 import Card from "./Card.jsx";
-import axios from "axios";
 import { storage } from "../firebase/firebase";
+import Header from "./Header";
 
 class AddItem extends React.Component {
   constructor(props) {
@@ -12,20 +12,17 @@ class AddItem extends React.Component {
     this.state = {
       imageAsFile: "",
       imageAsUrl: allInputs,
+      name: "",
+      price: ""
     };
+
+    this.handleName = this.handleName.bind(this);
+    this.handlePrice = this.handlePrice.bind(this);
   }
 
   fileHandler = (event) => {
     console.log(event.target.files[0]);
   };
-  uploadHandler = () => {
-    axios.post("");
-  };
-  handleClick() {
-    console.log("done button clicked");
-    // const name = document.getElementById("item-name").value; //gets name input
-    // const description = document.getElementById("item-description").value;
-  }
 
   handleImageAsFile = (e) => {
     console.log(this.state.imageAsFile);
@@ -74,64 +71,50 @@ class AddItem extends React.Component {
     );
   };
 
+  handleName(event) {
+    this.setState({ name: event.target.value });
+  }
+  handlePrice(event) {
+    this.setState({ price: event.target.value });
+  }
   render() {
-    return (
-      <div>
-        <h1>My Listings</h1>
-        <div className="new-card">
-          <h1 className="new">New Listing</h1>
-          <form onSubmit={this.handleFireBaseUpload}>
-            <input
-              type="text"
-              placeholder="Enter Item Name"
-              id="item-name"
-            ></input>
-            <input type="file" onChange={this.handleImageAsFile}></input>
-            {/* <input type="file" onChange={this.fileHandler} /> */}
-
-            <input
-              type="text"
-              placeholder="Enter Item Description"
-              id="item-description"
-            ></input>
-            <button>Submit</button>
-            {/* <button onClick={this.handleClick}>Done</button> */}
-          </form>
+    return (<div>
+      <Header />
+      <div className="container">
+        <div className="display">
+          <div className="new-card">
+            <h1 className="new">New Listing</h1>
+            <form onSubmit={this.handleFireBaseUpload}>
+              <input
+                type="text"
+                placeholder="Enter Item Name"
+                onChange={this.handleName}
+              ></input>
+              <hr />
+              <input type="file" onChange={this.handleImageAsFile}></input>
+              <hr />
+              <input
+                type="number"
+                placeholder="Enter Price"
+                onChange={this.handlePrice}
+              ></input>
+              <hr />
+              <button onClick={this.handleClick}>Submit</button>
+            </form>
+          </div>
         </div>
-        <img
-          className="new-img"
-          src={this.state.imageAsUrl.imgUrl[0]}
-          alt="firebase image"
-        />
-        <div className="card-container">
+        <div className="arrow">
+          <img src="https://img.icons8.com/cotton/2x/circled-right--v2.png" alt="arrow" />
+        </div>
+        <div className="display">
           <Card
-            name="Men's T-Shirt"
-            description=""
-            img="https://img.icons8.com/carbon-copy/2x/clothes.png"
-            price="$4.99"
+            name={"Name: " + `${this.state.name}`}
+            img={this.state.imageAsUrl.imgUrl[0]}
+            price={"$" + `${this.state.price}`}
           />
-          <Card
-            name="Women's T-Shirt"
-            description=""
-            img="https://img.icons8.com/ios/2x/womens-t-shirt.png"
-            price="$4.99"
-          />
-          <Card
-            name="Hanger Pack (20)"
-            description=""
-            img="https://img.icons8.com/color/2x/hanger.png"
-            price="$9.99"
-          />
-          <Card
-            name="Sunglasses"
-            description=""
-            img="https://img.icons8.com/cotton/2x/glasses--v3.png"
-            price="$9.99"
-          />
-          <Card name="new" img={this.state.imageAsUrl.imgUrl[1]} />
-          <Card />
         </div>
       </div>
+    </div>
     );
   }
 }

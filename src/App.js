@@ -1,19 +1,22 @@
 import React from "react";
-// import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 //Styles
-import "./App.css";
 
 //Components
-import AddItem from "./Components/AddItem";
-import Header from "./Components/Header";
+import Homepage from './Components/Homepage';
+import AddItem from './Components/AddItem';
+import PageNotFound from "./Components/PageNotFound";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <AddItem />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/pay-app" component={Homepage} />
+        <Route exact path="/new-item" component={AddItem} />
+        <Route component={PageNotFound} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

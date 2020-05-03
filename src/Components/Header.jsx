@@ -9,13 +9,12 @@ class Header extends React.Component {
 
     return (
       <header className="header">
-        Store Name Goes Here
-        {/* <button className="cart">cart</button> */}
         <img
           onClick={cartClick}
-          src="https://img.icons8.com/cotton/2x/gender-neutral-user.png"
+          src="https://img.icons8.com/cotton/2x/small-business--v2.png"
           alt="Account"
         />
+        My Store
       </header>
     );
   }

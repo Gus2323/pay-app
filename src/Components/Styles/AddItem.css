@@ -1,9 +1,15 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 .new-card {
   border: 1px solid black;
   border-radius: 1px;
   display: flex;
   flex-direction: column;
-  width: 25%;
   background-color: white;
   padding: 10px;
   padding-left: 0;
@@ -11,8 +17,22 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 50%;
 }
-.card-container {
+.display{
+  margin-top: 20px;
+  width: 50%;
+}
+.arrow{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* .card-container {
   margin-left: 10%;
   margin-right: 10%;
   display: flex;
@@ -20,15 +40,15 @@
   justify-content: center;
   padding-top: 1%;
   flex-wrap: wrap;
-}
+} */
 
-form {
+/* form {
   display: flex;
   flex-direction: column;
   width: 75%;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 /* button {
   outline: none;
   display: block;
