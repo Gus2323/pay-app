@@ -1,6 +1,5 @@
 .header {
   background-image: linear-gradient(#366ed8, #169bd7);
-  height: 80px;
   display: flex;
   flex-direction: row;
   font-size: calc(18px + 2vmin);
@@ -11,9 +10,30 @@
   top: 0;
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
-  align-items: center;
+  justify-content: space-between;
+  word-wrap: break-word;
+}
+
+.col{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.logo{
+  display: flex;
+}
+.head{
+  font-size: 45px;
+}
+.links{
+  margin-top: 25px;
+  font-size: 24px;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 /* .cart{
       width: 75px;

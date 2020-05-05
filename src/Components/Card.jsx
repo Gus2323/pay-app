@@ -7,7 +7,9 @@ class Card extends React.Component {
     return (
       <div className="card">
         <h3 placeholder="Item Name">{this.props.name}</h3>
-        <img className="item-image" src={this.props.img} alt="Image will load after you submit" />
+        <img className="item-image"
+          src={this.props.img}
+          alt="img" />
         <p>{this.props.description}</p>
         <h3 className="item-price">{this.props.price}</h3>
       </div>

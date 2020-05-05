@@ -9,9 +9,6 @@ class Homepage extends React.Component {
         return (<div>
             <div className="App">
                 <Header />
-                <a href="/new-item">
-                    <button id="add">Add Item</button>
-                </a>
                 <h1>My Listings</h1>
             </div>
         </div>

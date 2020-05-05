@@ -25,7 +25,7 @@ class AddItem extends React.Component {
   };
 
   handleImageAsFile = (e) => {
-    console.log(this.state.imageAsFile);
+    // console.log(this.state.imageAsFile);
     const image = e.target.files[0];
     this.setState({
       imageAsFile: image,
@@ -99,7 +99,7 @@ class AddItem extends React.Component {
                 onChange={this.handlePrice}
               ></input>
               <hr />
-              <button onClick={this.handleClick}>Submit</button>
+              <button>Submit</button>
             </form>
           </div>
         </div>
@@ -108,9 +108,9 @@ class AddItem extends React.Component {
         </div>
         <div className="display">
           <Card
-            name={"Name: " + `${this.state.name}`}
+            name={`Name: ` + `${this.state.name}`}
             img={this.state.imageAsUrl.imgUrl[0]}
-            price={"$" + `${this.state.price}`}
+            price={`$` + `${this.state.price}`}
           />
         </div>
       </div>
