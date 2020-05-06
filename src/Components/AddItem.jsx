@@ -20,12 +20,12 @@ class AddItem extends React.Component {
     this.handlePrice = this.handlePrice.bind(this);
   }
 
-  fileHandler = (event) => {
-    console.log(event.target.files[0]);
-  };
+  // fileHandler = (event) => {
+  //   console.log(event.target.files[0]);
+  // };
 
   handleImageAsFile = (e) => {
-    // console.log(this.state.imageAsFile);
+    console.log(this.state.imageAsFile);
     const image = e.target.files[0];
     this.setState({
       imageAsFile: image,
@@ -35,44 +35,55 @@ class AddItem extends React.Component {
   handleFireBaseUpload = (e) => {
     e.preventDefault();
     console.log("start of upload");
-    // async magic goes here...
-    if (this.state.imageAsFile === "") {
-      console.error(`not an image, the image file is a ${typeof imageAsFile}`);
+
+    if (this.state.name === "") {
+      console.log("enter name");
     }
-    const uploadTask = storage
-      .ref(`/images/${this.state.imageAsFile.name}`)
-      .put(this.state.imageAsFile);
-    //initiates the firebase side uploading
-    uploadTask.on(
-      "state_changed",
-      (snapShot) => {
-        //takes a snap shot of the process as it is happening
-        console.log(snapShot);
-      },
-      (err) => {
-        //catches the errors
-        console.log(err);
-      },
-      () => {
-        // gets the functions from storage refences the image storage in firebase by the children
-        // gets the download url then sets the image from firebase as the value for the imgUrl key:
-        storage
-          .ref("images")
-          .child(this.state.imageAsFile.name)
-          .getDownloadURL()
-          .then((fireBaseUrl) => {
-            this.setState({
-              imageAsUrl: {
-                imgUrl: this.state.imageAsUrl.imgUrl.concat(fireBaseUrl),
-              },
+    if (this.state.name === "") {
+      console.log("enter name");
+    }
+
+    if (this.state.imageAsFile === "") {
+      console.log(`not an image, the image file is a ${typeof imageAsFile}`);
+    }
+    else {
+      const uploadTask = storage
+        .ref(`/images/${this.state.imageAsFile.name}`)
+        .put(this.state.imageAsFile);
+      //initiates the firebase side uploading
+      uploadTask.on(
+        "state_changed",
+        (snapShot) => {
+          //takes a snap shot of the process as it is happening
+          console.log(snapShot);
+        },
+        (err) => {
+          //catches the errors
+          console.log(err);
+        },
+        () => {
+          // gets the functions from storage refences the image storage in firebase by the children
+          // gets the download url then sets the image from firebase as the value for the imgUrl key:
+          storage
+            .ref("images")
+            .child(this.state.imageAsFile.name)
+            .getDownloadURL()
+            .then((fireBaseUrl) => {
+              this.setState({
+                imageAsUrl: {
+                  imgUrl: this.state.imageAsUrl.imgUrl.concat(fireBaseUrl),
+                },
+              });
             });
-          });
-      }
-    );
+        }
+      );
+    }
   };
 
   handleName(event) {
-    this.setState({ name: event.target.value });
+    if (event.target.value != null) {
+      this.setState({ name: event.target.value });
+    }
   }
   handlePrice(event) {
     this.setState({ price: event.target.value });
@@ -108,10 +119,11 @@ class AddItem extends React.Component {
         </div>
         <div className="display">
           <Card
-            name={`Name: ` + `${this.state.name}`}
+            name={`Name: ${this.state.name}`}
             img={this.state.imageAsUrl.imgUrl[0]}
-            price={`$` + `${this.state.price}`}
+            price={`$${this.state.price}`}
           />
+          <button><a href="/My-Listings">Publish to my listings</a></button>
         </div>
       </div>
     </div>
