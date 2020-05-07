@@ -88,6 +88,16 @@ class AddItem extends React.Component {
   handlePrice(event) {
     this.setState({ price: event.target.value });
   }
+
+
+
+  save = (name, price, image) => {
+    alert(name, price, image);
+  }
+  errorAlert = (a) => {
+    if (this.state.name === "" || this.state.price === "")
+      alert("Please input Name & Price");
+  }
   render() {
     return (<div>
       <Header />
@@ -96,34 +106,38 @@ class AddItem extends React.Component {
           <div className="new-card">
             <h1 className="new">New Listing</h1>
             <form onSubmit={this.handleFireBaseUpload}>
-              <input
+              <input className="text"
                 type="text"
                 placeholder="Enter Item Name"
                 onChange={this.handleName}
               ></input>
-              <hr />
+
               <input type="file" onChange={this.handleImageAsFile}></input>
-              <hr />
+
               <input
                 type="number"
                 placeholder="Enter Price"
                 onChange={this.handlePrice}
               ></input>
-              <hr />
-              <button>Submit</button>
+
+              <button onClick={() => this.errorAlert()}>Load Item</button>
             </form>
+
+
           </div>
+
         </div>
-        <div className="arrow">
-          <img src="https://img.icons8.com/cotton/2x/circled-right--v2.png" alt="arrow" />
-        </div>
+
         <div className="display">
           <Card
             name={`Name: ${this.state.name}`}
             img={this.state.imageAsUrl.imgUrl[0]}
             price={`$${this.state.price}`}
           />
-          <button><a href="/My-Listings">Publish to my listings</a></button>
+          <button onClick={() => this.save(`${this.state.name}`,
+            `${this.state.price}`, `${this.state.imageAsUrl}`)}>
+            <a href="/My-Listings">Publish to my listings</a>
+          </button>
         </div>
       </div>
     </div>

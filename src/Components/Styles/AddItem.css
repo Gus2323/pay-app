@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-left: 10%;
-  margin-right: 10%;
+  flex-wrap: wrap;
 }
 .new-card {
   border: 1px solid black;
@@ -32,39 +31,43 @@
     margin-top: auto;
     margin-bottom: auto;
 }
-
-/* .card-container {
-  margin-left: 10%;
-  margin-right: 10%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-top: 1%;
-  flex-wrap: wrap;
-} */
-
-/* form {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-} */
-/* button {
-  outline: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: calc(10px + 2vmin);
-  width: 3rem;
-  height: 3rem;
-  border-radius: 100%;
-  border: 1px dashed black;
-} */
 .new {
   font-size: calc(6px + 2vmin);
 }
 a{
   text-decoration: none;
   color: black;
+}
+form {
+  box-sizing: border-box;
+  width: 300px;
+  margin: auto;
+  border-radius: 3px;
+}
+.form-head{
+  height: 100px;
+  width: 100%;
+  font-size: 18px;
+  background: darken(#1abc9c, 4%);
+  color: white;
+  line-height: 50%;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+}
+
+input{
+  margin: 40px 40px;
+  width: 200px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #1abc9c;
+  transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, #1abc9c 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: darken(#1abc9c, 20%);
+  transition: all 0.3s ease-in-out;
+  outline: none;
 }
