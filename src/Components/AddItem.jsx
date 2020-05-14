@@ -89,18 +89,13 @@ class AddItem extends React.Component {
     this.setState({ price: event.target.value });
   }
 
-
-
-  save = (name, price, image) => {
-    alert(name, price, image);
-  }
   errorAlert = (a) => {
     if (this.state.name === "" || this.state.price === "")
       alert("Please input Name & Price");
   }
   render() {
     return (<div>
-      <Header />
+      <h1>Add Items</h1>
       <div className="container">
         <div className="display">
           <div className="new-card">
@@ -120,7 +115,7 @@ class AddItem extends React.Component {
                 onChange={this.handlePrice}
               ></input>
 
-              <button onClick={() => this.errorAlert()}>Load Item</button>
+              <button onClick={() => this.errorAlert()}>Load Picture</button>
             </form>
 
 
@@ -134,9 +129,8 @@ class AddItem extends React.Component {
             img={this.state.imageAsUrl.imgUrl[0]}
             price={`$${this.state.price}`}
           />
-          <button onClick={() => this.save(`${this.state.name}`,
-            `${this.state.price}`, `${this.state.imageAsUrl}`)}>
-            <a href="/My-Listings">Publish to my listings</a>
+          <button>
+            Publish
           </button>
         </div>
       </div>
