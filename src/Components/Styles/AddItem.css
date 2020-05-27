@@ -6,30 +6,22 @@
 }
 .new-card {
   border: 1px solid black;
-  border-radius: 1px;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 10px;
-  padding-left: 0;
-  padding-right: 0;
   display: block;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  max-width: 300px;
+  word-wrap: break-word;
+  width: 300px;
+  padding: 10px;
+  margin: 1%;
 }
 .display{
   margin-top: 20px;
-  width: 50%;
-}
-.arrow{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  display: block;
-    margin-top: auto;
-    margin-bottom: auto;
+  margin:1%;
 }
 .new {
   font-size: calc(6px + 2vmin);
@@ -54,7 +46,9 @@ form {
   border-radius: 3px 3px 0 0;
   box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
 }
-
+.add-item{
+  margin-bottom: 50px;
+}
 input{
   margin: 40px 40px;
   width: 200px;

@@ -5,14 +5,7 @@ class Header extends React.Component {
 
 
   render() {
-    const pages = ["My-Listings", "Add-Item"];
-    const navbarLinks = pages.map(page => {
-      return (
-        <a className="links" href={"/" + page}>
-          {page}
-        </a >
-      );
-    });
+    
     function cartClick() {
       return console.log("account clicked");
     }
@@ -26,11 +19,8 @@ class Header extends React.Component {
             alt="Account"
             className="col"
           />
-          <h1 className="head">My Store</h1>
+          <h1 className="head">Freezing Point Ice Cream</h1>
         </div>
-
-        <nav className="links">{navbarLinks}</nav>
-
 
       </header>
     );

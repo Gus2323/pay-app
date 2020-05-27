@@ -3,7 +3,6 @@ import "../Components/Styles/AddItem.css";
 import "../App.css";
 import Card from "./Card.jsx";
 import { storage } from "../firebase/firebase";
-import Header from "./Header";
 
 class AddItem extends React.Component {
   constructor(props) {
@@ -94,12 +93,12 @@ class AddItem extends React.Component {
       alert("Please input Name & Price");
   }
   render() {
-    return (<div>
-      <h1>Add Items</h1>
+    return (<div className="add-item">
+      <h1>Send Us A Request!</h1>
       <div className="container">
         <div className="display">
           <div className="new-card">
-            <h1 className="new">New Listing</h1>
+            <h1 className="new">New Ice Cream</h1>
             <form onSubmit={this.handleFireBaseUpload}>
               <input className="text"
                 type="text"
@@ -115,7 +114,7 @@ class AddItem extends React.Component {
                 onChange={this.handlePrice}
               ></input>
 
-              <button onClick={() => this.errorAlert()}>Load Picture</button>
+              <button onClick={() => this.errorAlert()}>Continue</button>
             </form>
 
 
@@ -129,9 +128,6 @@ class AddItem extends React.Component {
             img={this.state.imageAsUrl.imgUrl[0]}
             price={`$${this.state.price}`}
           />
-          <button>
-            Publish
-          </button>
         </div>
       </div>
     </div>

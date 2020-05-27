@@ -1,5 +1,5 @@
 .header {
-  background-image: linear-gradient(#366ed8, #169bd7);
+  background-image: linear-gradient(to bottom right,#1E9AFE, #60DFCD);
   display: flex;
   flex-direction: row;
   font-size: calc(18px + 2vmin);
@@ -33,7 +33,7 @@
   display: flex;
 }
 .head{
-  font-size: 45px;
+  font-size: 35px;
 }
 .links{
   margin-top: 25px;
